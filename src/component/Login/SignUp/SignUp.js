@@ -1,4 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import firebase from "firebase/app";
+import "firebase/auth";
+import {UserContext} from '../../../App'
+import firebaseConfig from './../FirebaseConfig';
+import { useContext} from "react";
 import {
     Col,
     Container,
@@ -9,11 +14,22 @@ import {
     Alert,
   } from "react-bootstrap";
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import Navbar from '../../Home/Navbar/Navbar';
-import regImg from '../../../images/register.png'
+import regImg from '../../../images/register.png';
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);;
+ }else {
+    firebase.app();
+ }
 const SignUp = () => {
-
+    const [loggedInUser,setLoggedInUser]=useContext(UserContext);
+    // const [user,setUser] = useState({});
+    const [success,setSuccess]= useState(false);
+    const [error,setError]= useState('');
+    const history=useHistory();
+   const location=useLocation();
+   let { from } = location.state || { from: { pathname: "/" } };
     const {
         register,
         reset,
@@ -23,7 +39,30 @@ const SignUp = () => {
     
     //   const history = useHistory();
       const onSubmit = (data) => {
-        console.log(data);
+        reset();
+        // console.log(data);
+        const name = data.name;
+        // console.log(name)
+        const email = data.email;
+        const password = data.password;
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in 
+    // setSuccess(false)
+    const newUser = { email,password, displayName: name };
+    var user = userCredential.user;
+    console.log(newUser);
+    setLoggedInUser(newUser);
+    setSuccess("User Created Succesfully.");
+    alert("User Created Succesfully.")
+    // history.replace(from);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    setError(error.message) ;
+    // ..
+  });
         
       };
     return (
@@ -42,7 +81,7 @@ const SignUp = () => {
                     placeholder="Your Name"
                     className="p-2 m-2 w-100"
                   />
-    <br />
+                     <br />
                   <input
                     {...register("email")}
                     type="email"
@@ -73,13 +112,12 @@ const SignUp = () => {
                     <Spinner animation="border" variant="primary " />
                   </div>
                 )} */}
-                {/* {user?.email && (
+                 {success && (
                   <Alert variant="success">
-                    <Alert.Link href="#">an example link</Alert.Link>. User
-                    created successfully
+                  {success}
                   </Alert>
-                )} */}
-                {/* {error && <Alert variant="warning">{error}</Alert>} */}
+                )} 
+                {error && <Alert variant="warning">{error}</Alert>} 
                 <Link style={{ textDecoration: "none" }} to="/Login">
                   <Button variant="text">
                     Already Registered? Please Login

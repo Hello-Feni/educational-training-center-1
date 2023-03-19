@@ -6,8 +6,8 @@ import { useHistory, useLocation } from 'react-router';
 import './Login.css'
 import firebaseConfig from './FirebaseConfig';
 import { useContext} from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faGooglePlusG} from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {faGooglePlusG} from '@fortawesome/free-brands-svg-icons';
 import Navbar from "../Home/Navbar/Navbar";
 import loginImg from './../../images/login.jpg';
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
@@ -56,8 +56,22 @@ const Login = () => {
 }
 
 const onSubmit = (data) => {
-   
-  console.log(data);
+  const email = data.email;
+  const password = data.password;
+  // console.log(data);
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    history.replace(from);
+    alert("login ");
+    // console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
 };
     return (
         <div>

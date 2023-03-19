@@ -31,8 +31,8 @@ const Footer = () => {
         <footer className="footer-area clear-both foot ">
             <div className="container pt-5 ">
                 <div className="row py-5 justify-content-center text-white ">
-                    <FooterCol key={1} menuTitle={" "} menuItems={noNamed}/>
-                    <FooterCol key={2} menuTitle="Course" menuItems={Course}/>
+                    {/* <FooterCol key={1} menuTitle={" "} menuItems={noNamed}/> */}
+                    {/* <FooterCol key={2} menuTitle="Course" menuItems={Course}/> */}
                     <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}> 
                         <ul className="social-media list-inline">
                             <li className="list-inline-item"><a href="//facebook.com"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>

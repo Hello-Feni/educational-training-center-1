@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
+import firebase from "firebase/app";
+import "firebase/auth";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../App";
+import firebaseConfig from './../../Login/FirebaseConfig';
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);;
+}else {
+  firebase.app();
+}
 
 const Navbar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -19,6 +27,14 @@ const Navbar = () => {
 
   }, []);
 
+  const signOutUser=()=>{
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      alert('Sign-out successful.');
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
@@ -79,7 +95,15 @@ const Navbar = () => {
                   </div>
                 }
                
-              
+              {loggedInUser.email &&  <Link
+                class="nav-link ms-5 text-white active"
+                aria-current="page"
+                onClick={signOutUser}
+                to="/Login"
+              >
+                Logout
+              </Link>}
+
                 {isAdmin && 
                   <div>
                     <Link
