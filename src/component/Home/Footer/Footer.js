@@ -1,57 +1,106 @@
 import React from 'react';
 import './Footer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
-import FooterCol from '../FooterCol/FooterCol';
-
 
 const Footer = () => {
-    const noNamed = [
-        {name: "Our All Student" , link: "/student"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Our All Course" , link: "/allCourse"},
-        
-    ]
-    const ourAddress = [
-        {name: "Mirpur-11 - 1250 Dhaka" , link: "//google.com/map"},
-        {name: "Bangladesh" , link: "//google.com/map"},
-       
-    ]
-    
-    const Course = [
-        {name: "Javascript" , link: "/js"},
-        {name: "React" , link: "/React"},
-        {name: "Python" , link: "/Python"},
-        {name: "MS Word" , link: "/Ms-Word"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
-    ]
     return (
-        <footer className="footer-area clear-both foot ">
-            <div className="container pt-5 ">
-                <div className="row py-5 justify-content-center text-white ">
-                    {/* <FooterCol key={1} menuTitle={" "} menuItems={noNamed}/> */}
-                    {/* <FooterCol key={2} menuTitle="Course" menuItems={Course}/> */}
-                    <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}> 
-                        <ul className="social-media list-inline">
-                            <li className="list-inline-item"><a href="//facebook.com"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
-                            <li className="list-inline-item"><a href="//google.com"><FontAwesomeIcon className="icon" icon={faGooglePlusG} /></a></li>
-                            <li className="list-inline-item"><a href="//instagram.com"><FontAwesomeIcon className="icon" icon={faInstagram} /></a></li>
-                        </ul>
-                        <div className="mt-5">
-                            <h6 className="text-primary">Call now</h6>
-                            <button className="btn btn-primary">+5654657945</button>
-                        </div>
-                    </FooterCol>
-                </div>
-                <div className="copyRight text-center">
-                    <p>Copyright {(new Date()).getFullYear()} All Rights Reserved</p>
-                </div>
-            </div>
-        </footer>
-        
-    );
+        <div className="Container">
+  <div className="row">
+    	<div className="col-md-12">
+    	    <footer className="footer">				
+		<div className="container">
+			<div className="row">
+				<div className="col-md-3 m-b-30">
+					<div className="footer-title m-t-5 m-b-20 p-b-8">
+						About us
+					</div>	
+					<p className="white-text">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 text of the printing.
+					</p>
+				</div>
+				<div className="col-md-3 m-b-30">
+					<div className="footer-title m-t-5 m-b-20 p-b-8">
+						Latest themes
+					</div>	
+					<div className="footer-links">
+						<a href="#">
+							Appointment
+						</a>
+						<a href="#">
+							Health center
+						</a>
+						<a href="#">
+							Quality
+						</a>
+						<a href="#">
+							Wallstreet
+						</a>
+					</div>
+				</div>
+				<div className="col-md-3 m-b-30">
+					<div className="footer-title m-t-5 m-b-20 p-b-8">
+						Quick Links
+					</div>	
+					<div className="footer-links">
+						<a href="#">
+							Blog
+						</a>
+						<a href="#">
+							FAQ
+						</a>
+						<a href="#">
+							Terms & conditions
+						</a>
+						<a href="#">
+							Privacy policy
+						</a>
+					</div>
+				</div>
+				<div className="col-md-3 m-b-30">
+					<div className="footer-title m-t-5 m-b-20 p-b-8">
+						Support
+					</div>	
+					<div className="footer-links">
+						<a href="#">
+							Affiliate
+						</a>
+						<a href="#">
+							Login
+						</a>
+						<a href="#">
+							All theme package
+						</a>
+						<a href="#">
+							Support forum
+						</a>
+					</div>
+
+					<div className="footer-social-links m-t-30">
+						<li>
+							<a href="#">
+								<i className="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i className="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i className="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i className="fa fa-youtube" aria-hidden="true"></i>
+							</a>
+						</li>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div className="footer-bottom">
+		Copyright © 2023, All Rights Reserved
+	</div>
+    	</div>
+	</div>
+</div>
+    );    
 };
 
 export default Footer;

@@ -55,19 +55,19 @@ const url =`http://localhost:5000/AddRegistration`;
     
   <div className="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="name" name="name" ref={register({ required: true })} className="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name"/>
+    <input type="name" name="name" {...register("name")} className="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name"/>
   </div>
   <div className="form-group">
     <label for="exampleInputPassword1">Enter Your Email</label>
-    <input type="email" ref={register({ required: true })} name="email" className="form-control"  placeholder="Enter Your Email"/>
+    <input type="email" {...register("email")} name="email" className="form-control"  placeholder="Enter Your Email"/>
   </div>
   <div className="form-group">
     <label for="exampleInputPassword1">Enter Your Course Name</label>
-    <input type="text" name="course" ref={register({ required: true })} className="form-control"   placeholder="Enter Your Course Name"/>
+    <input type="text" name="course" {...register("course")} className="form-control"   placeholder="Enter Your Course Name"/>
   </div>
   <div className="form-group">
     <label for="exampleInputPassword1">Enter Your phone Number</label>
-    <input type="phone" name="phone" ref={register({ required: true })} className="form-control"   placeholder="Enter Your Phone Number"/>
+    <input type="phone" name="phone" {...register("phone")} className="form-control"   placeholder="Enter Your Phone Number"/>
   </div>
 
   <button type="submit" className="btn btn-primary">Submit</button>
