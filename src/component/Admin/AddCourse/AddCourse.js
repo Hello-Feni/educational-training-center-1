@@ -53,12 +53,12 @@ const AddCourse = () => {
     <h1>Add Course</h1>
   <div className="form-group">
        <label for="exampleInputPassword1">Add Your Course Title</label>
-    <input type="text" className="form-control"  name="name" id="exampleInputEmail1" ref={register} aria-describedby="emailHelp" placeholder="Enter Title"/>
+    <input type="text" className="form-control"  name="name" id="exampleInputEmail1"   {...register("name")} aria-describedby="emailHelp" placeholder="Enter Title"/>
     </div>
   <br/>
   <div className="form-group">
     <label for="exampleInputPassword1">Description</label>
-    <textarea className="form-control" name="description" id="exampleFormControlTextarea1" rows="3" ref={register} placeholder="Enter Your Designation"></textarea>
+    <textarea className="form-control" name="description" id="exampleFormControlTextarea1" rows="3"   {...register("description")} placeholder="Enter Your Designation"></textarea>
   </div>
   <br/>
   <div className="form-group">
