@@ -55,7 +55,7 @@ const url =`http://localhost:5000/AddRegistration`;
     
   <div className="form-group">
     <label for="exampleInputEmail1">Name</label>
-<<<<<<< HEAD
+
     <input type="name" name="name"   {...register("name")} className="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name"/>
   </div>
   <div className="form-group">
@@ -69,7 +69,7 @@ const url =`http://localhost:5000/AddRegistration`;
   <div className="form-group">
     <label for="exampleInputPassword1">Enter Your phone Number</label>
     <input type="phone" name="phone"   {...register("phone")} className="form-control"   placeholder="Enter Your Phone Number"/>
-=======
+
     <input type="name" name="name" {...register("name")} className="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name"/>
   </div>
   <div className="form-group">
@@ -83,7 +83,7 @@ const url =`http://localhost:5000/AddRegistration`;
   <div className="form-group">
     <label for="exampleInputPassword1">Enter Your phone Number</label>
     <input type="phone" name="phone" {...register("phone")} className="form-control"   placeholder="Enter Your Phone Number"/>
->>>>>>> main
+
   </div>
  
   <button type="submit" className="btn btn-primary">Submit</button>

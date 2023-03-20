@@ -90,7 +90,7 @@ const Navbar = () => {
             
                   </div>
                 }
-<<<<<<< HEAD
+
 
                {
                 loggedInUser?.email ?
@@ -120,7 +120,7 @@ const Navbar = () => {
               >
                 Logout
               </Link>} */}
-=======
+
               
               {loggedInUser.email ? (
               <Link
@@ -142,7 +142,7 @@ const Navbar = () => {
               Login
             </Link>
             )}
->>>>>>> main
+
 
                 {isAdmin && 
                   <div>

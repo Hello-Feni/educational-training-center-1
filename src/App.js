@@ -48,14 +48,13 @@ function App() {
           <Route path="/review">
             <Review></Review>
           </Route>
-<<<<<<< HEAD
+
         
-=======
-          CourseInfo
+
+          
           <Route path="/CourseInfo/:_id">
             <CourseInfo></CourseInfo>
-          </Route>
->>>>>>> main
+            </Route>
           <PrivateRoute path="/admin">
             <Admin></Admin>
           </PrivateRoute>
