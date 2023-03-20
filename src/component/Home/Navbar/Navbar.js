@@ -30,7 +30,9 @@ const Navbar = () => {
   const signOutUser=()=>{
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
+      setLoggedInUser({})
       alert('Sign-out successful.');
+
     }).catch((error) => {
       // An error happened.
     });
@@ -84,7 +86,22 @@ const Navbar = () => {
               >
                 Contact Us
               </Link>
-              <Link
+            
+                  </div>
+                }
+
+               {
+                loggedInUser?.email ?
+                <Link
+                class="nav-link ms-5 text-white active"
+                aria-current="page"
+                onClick={signOutUser}
+                to="/Login"
+              >
+                Logout
+              </Link>
+                :
+                <Link
                 class="nav-link ms-5 text-white active"
                 aria-current="page"
                 href="#"
@@ -92,17 +109,15 @@ const Navbar = () => {
               >
                 Login
               </Link>
-                  </div>
-                }
-               
-              {loggedInUser.email &&  <Link
+               }
+              {/* {loggedInUser.email &&  <Link
                 class="nav-link ms-5 text-white active"
                 aria-current="page"
                 onClick={signOutUser}
                 to="/Login"
               >
                 Logout
-              </Link>}
+              </Link>} */}
 
                 {isAdmin && 
                   <div>

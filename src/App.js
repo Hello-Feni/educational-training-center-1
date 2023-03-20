@@ -47,7 +47,7 @@ function App() {
           <Route path="/review">
             <Review></Review>
           </Route>
-         
+        
           <PrivateRoute path="/admin">
             <Admin></Admin>
           </PrivateRoute>

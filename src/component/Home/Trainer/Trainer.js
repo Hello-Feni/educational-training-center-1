@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../../../images/Rakibul.png'
 import image1 from '../../../images/sujon.png'
-import image2 from '../../../images/Afridy.png'
+import image2 from '../../../images/mamun.png'
 import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons'
 
 import TrainerDetails from '../TrainerDetails/TrainerDetails';
@@ -18,7 +18,7 @@ const TrainerData=[
     },
     {
         number:'0156524165',
-        name:'Mr Afridy',
+        name:'Shariful Islam',
         course:'React',
         image:image2,
         icon:faPhoneVolume
