@@ -5,7 +5,7 @@ import {UserContext} from '../../App'
 import { useHistory, useLocation } from 'react-router';
 import './Login.css'
 import firebaseConfig from './FirebaseConfig';
-import { useContext} from "react";
+import { useContext, useEffect} from "react";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faGooglePlusG} from '@fortawesome/free-brands-svg-icons';
 import Navbar from "../Home/Navbar/Navbar";
@@ -55,6 +55,19 @@ const Login = () => {
 
 }
 
+useEffect(()=>{
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+    
+      var uid = user.uid;
+      // ...
+      setLoggedInUser(user)
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+},[])
 const onSubmit = (data) => {
   const email = data.email;
   const password = data.password;

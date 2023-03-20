@@ -18,6 +18,7 @@ import ManageCourse from './component/Admin/ManageCourse/ManageCourse';
 import Login from './component/Login/Login';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import SignUp from './component/Login/SignUp/SignUp';
+import CourseInfo from './component/Home/CourseInfo/CourseInfo';
 
 export const UserContext = createContext();
 
@@ -47,7 +48,10 @@ function App() {
           <Route path="/review">
             <Review></Review>
           </Route>
-         
+          CourseInfo
+          <Route path="/CourseInfo/:_id">
+            <CourseInfo></CourseInfo>
+          </Route>
           <PrivateRoute path="/admin">
             <Admin></Admin>
           </PrivateRoute>

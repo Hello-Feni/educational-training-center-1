@@ -36,7 +36,7 @@ const MakeAdmin = () => {
     <form className="col-md-7" onSubmit={handleSubmit(onSubmit)}>
   <div className="form-group">
        <label for="exampleInputPassword1">Email</label>
-    <input type="email" className="form-control" name="email" ref={register}  placeholder="sumon@gmail.com"/>
+    <input type="email" className="form-control" name="email"   {...register("email")}  placeholder="sumon@gmail.com"/>
     <button type="submit" className="btn btn-primary">Submit</button>
     </div>
     
