@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
+import './Navbar.css';
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../App";
@@ -39,7 +40,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+      <nav class="navbar navbar-expand-lg navbar-light NavColor">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -55,7 +56,7 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <h3>
               <Link className="nav-link ml-5 text-white" to="/Home">
-                Computer-Bangladesh
+              Educational Content Sharing Platform
               </Link>
             </h3>
             <div class=" navbar-nav ms-auto mb-2 mb-lg-0">

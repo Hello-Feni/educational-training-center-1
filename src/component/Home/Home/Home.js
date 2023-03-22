@@ -1,6 +1,10 @@
 import React from 'react';
 import Blog from '../Blog/Blog';
 import Course from '../Course/Course';
+<<<<<<< HEAD
+=======
+import Footer from '../Footer/Footer';
+>>>>>>> sujon
 
 import HeaderTop from '../HeaderTop/HeaderTop';
 import Navbar from '../Navbar/Navbar';
