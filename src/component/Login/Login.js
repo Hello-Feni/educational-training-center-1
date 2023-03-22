@@ -67,6 +67,19 @@ const Login = () => {
 
 }
 
+useEffect(()=>{
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+    
+      var uid = user.uid;
+      // ...
+      setLoggedInUser(user)
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+},[])
 const onSubmit = (data) => {
   const email = data.email;
   const password = data.password;

@@ -6,6 +6,9 @@ import Course from '../Course/Course';
 import Footer from '../Footer/Footer';
 >>>>>>> sujon
 
+import Footer from '../Footer/Footer';
+
+
 import HeaderTop from '../HeaderTop/HeaderTop';
 import Navbar from '../Navbar/Navbar';
 import Review from '../Review/Review';
@@ -20,7 +23,7 @@ const Home = () => {
             <Blog></Blog>
             <Trainer></Trainer>
             <Review></Review>
-            
+            <Footer></Footer>
             
         </div>
     );

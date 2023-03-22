@@ -55,7 +55,7 @@ const SignUp = () => {
     setLoggedInUser(newUser);
     setSuccess("User Created Succesfully.");
     alert("User Created Succesfully.")
-    // history.replace(from);
+    history.replace(from);
     // ...
   })
   .catch((error) => {

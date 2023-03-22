@@ -91,6 +91,7 @@ const Navbar = () => {
                   </div>
                 }
 
+
                {
                 loggedInUser?.email ?
                 <Link
@@ -119,6 +120,29 @@ const Navbar = () => {
               >
                 Logout
               </Link>} */}
+
+              
+              {loggedInUser.email ? (
+              <Link
+              class="nav-link ms-5 text-white active"
+              aria-current="page"
+              onClick={signOutUser}
+              to="/Login"
+            >
+              Logout
+            </Link>
+            ) : 
+            (
+              <Link
+              class="nav-link ms-5 text-white active"
+              aria-current="page"
+              href="#"
+              to="/Login"
+            >
+              Login
+            </Link>
+            )}
+
 
                 {isAdmin && 
                   <div>
