@@ -1,7 +1,19 @@
 import React from 'react';
 import image from '../../../images/Rakibul.png'
 import image1 from '../../../images/sujon.png'
+<<<<<<< HEAD
+<<<<<<< HEAD
+import image2 from '../../../images/mamun.png'
+=======
 import image2 from '../../../images/mamun.jpg'
+>>>>>>> sujon
+=======
+
+
+
+import image2 from '../../../images/mamun.jpg'
+
+>>>>>>> b0ca97341b30a8ca3d86079fd08bd6df0162c3ac
 import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons'
 
 import TrainerDetails from '../TrainerDetails/TrainerDetails';
@@ -18,7 +30,18 @@ const TrainerData=[
     },
     {
         number:'0156524165',
+<<<<<<< HEAD
+<<<<<<< HEAD
+        name:'Shariful Islam',
+=======
         name:'Mr Mamun',
+>>>>>>> sujon
+=======
+
+        name:'Shariful Islam',
+ name:'Mr Mamun',
+
+>>>>>>> b0ca97341b30a8ca3d86079fd08bd6df0162c3ac
         course:'React',
         image:image2,
         icon:faPhoneVolume

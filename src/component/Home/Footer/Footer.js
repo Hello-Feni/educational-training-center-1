@@ -1,5 +1,7 @@
 import React from 'react';
 import './Footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faGooglePlusG,faGithub,faTwitter,faYoutube,faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     return (
@@ -53,6 +55,9 @@ const Footer = () => {
 						<a href="#">
 							Privacy policy
 						</a>
+						<a href="#">
+							Sujon Mamun Rakib
+						</a>
 					</div>
 				</div>
 				<div className="col-md-3 m-b-30">
@@ -75,20 +80,17 @@ const Footer = () => {
 					</div>
 
 					<div className="footer-social-links m-t-30">
-						<li>
-							<a href="#">
-								<i className="fa fa-facebook" aria-hidden="true"></i>
-							</a>
-							<a href="#">
-								<i className="fa fa-twitter" aria-hidden="true"></i>
-							</a>
-							<a href="#">
-								<i className="fa fa-linkedin" aria-hidden="true"></i>
-							</a>
-							<a href="#">
-								<i className="fa fa-youtube" aria-hidden="true"></i>
-							</a>
-						</li>
+						<ul className='mt-2'>
+						<li className="list-inline-item"><a href="//facebook.com" target="blank"><FontAwesomeIcon className="icon" icon={faFacebookF} /></a></li>
+						<li className="list-inline-item"><a href="//github.com" target="blank"><FontAwesomeIcon className="icon" icon={faGithub} /></a></li>
+						<li className="list-inline-item"><a href="//twitter.com" target="blank"><FontAwesomeIcon className="icon" icon={faTwitter} /></a></li>
+						<li className="list-inline-item"><a href="//youtube.com" target="blank"><FontAwesomeIcon className="icon" icon={faYoutube} /></a></li>
+
+
+
+
+						
+						</ul>
 					</div>
 				</div>
 			</div>

@@ -43,7 +43,7 @@ const Review = () => {
        console.log(error);
       });
       }
-  
+
     return (
         <div className="bg-light mt-5 row">
            
@@ -53,17 +53,53 @@ const Review = () => {
     <form className="col-md-7 " onSubmit={handleSubmit(onSubmit)} >
     <h1>Review</h1>
   <div className="form-group">
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <input type="text"  {...register("name")} className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" required/>
+=======
     <input type="text" {...register("name")} className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" required/>
+>>>>>>> sujon
+=======
+
+    <input type="text"  {...register("name")} className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" required/>
+
+    <input type="text" {...register("name")} className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" required/>
+
+>>>>>>> b0ca97341b30a8ca3d86079fd08bd6df0162c3ac
     </div>
   <br/>
   <div className="form-group">
     {/* <label for="exampleInputPassword1">Enter Your Email</label> */}
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <input type="text"  {...register("designation")} className="form-control" name="designation" id="exampleInputPassword1" placeholder="Course designation" required/>
+=======
     <input type="text" {...register("designation")} className="form-control" name="designation" id="exampleInputPassword1" placeholder="Course designation" required/>
+>>>>>>> sujon
+=======
+
+    <input type="text"  {...register("designation")} className="form-control" name="designation" id="exampleInputPassword1" placeholder="Course designation" required/>
+
+    <input type="text" {...register("designation")} className="form-control" name="designation" id="exampleInputPassword1" placeholder="Course designation" required/>
+
+>>>>>>> b0ca97341b30a8ca3d86079fd08bd6df0162c3ac
   </div>
   <br/>
   <div className="form-group">
     {/* <label for="exampleInputPassword1">Enter Your Course Name</label> */}
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <textarea  {...register("description")} className="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Description" required></textarea>
+=======
     <textarea {...register("description")} className="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Description" required></textarea>
+>>>>>>> sujon
+=======
+
+    <textarea  {...register("description")} className="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Description" required></textarea>
+
+    <textarea {...register("description")} className="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Description" required></textarea>
+
+>>>>>>> b0ca97341b30a8ca3d86079fd08bd6df0162c3ac
   </div>
   <br/>
   <div className="form-group">

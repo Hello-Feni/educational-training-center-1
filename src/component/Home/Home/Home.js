@@ -1,7 +1,13 @@
 import React from 'react';
 import Blog from '../Blog/Blog';
 import Course from '../Course/Course';
+<<<<<<< HEAD
+=======
 import Footer from '../Footer/Footer';
+>>>>>>> sujon
+
+import Footer from '../Footer/Footer';
+
 
 import HeaderTop from '../HeaderTop/HeaderTop';
 import Navbar from '../Navbar/Navbar';
@@ -18,6 +24,7 @@ const Home = () => {
             <Trainer></Trainer>
             <Review></Review>
             <Footer></Footer>
+            
         </div>
     );
 };

@@ -5,7 +5,7 @@ import {UserContext} from '../../App'
 import { useHistory, useLocation } from 'react-router';
 import './Login.css'
 import firebaseConfig from './FirebaseConfig';
-import { useContext} from "react";
+import { useContext, useEffect} from "react";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faGooglePlusG} from '@fortawesome/free-brands-svg-icons';
 import Navbar from "../Home/Navbar/Navbar";
@@ -26,6 +26,7 @@ if (!firebase.apps.length) {
 
 const Login = () => {
 
+
   const {
     register,
     reset,
@@ -38,13 +39,23 @@ const Login = () => {
    const location=useLocation();
    let { from } = location.state || { from: { pathname: "/" } };
 
+  
    const handleGoogleSingIn =()=>{
+    
     firebase.auth()
   .signInWithPopup(provider)
   .then((result) => {
     // console.log(result);
       const {displayName,email}=result.user;
       const singedInUser={name:displayName,email}
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          setLoggedInUser(singedInUser)
+        } else {
+          // No user is signed in.
+        }
+      });
     setLoggedInUser(singedInUser)
     history.replace(from)
     
@@ -52,9 +63,23 @@ const Login = () => {
     console.log(error);
     
   });
+ 
 
 }
 
+useEffect(()=>{
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+    
+      var uid = user.uid;
+      // ...
+      setLoggedInUser(user)
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+},[])
 const onSubmit = (data) => {
   const email = data.email;
   const password = data.password;
@@ -63,6 +88,7 @@ const onSubmit = (data) => {
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+   setLoggedInUser(user)
     history.replace(from);
     alert("login ");
     // console.log(user);
@@ -73,6 +99,24 @@ const onSubmit = (data) => {
     var errorMessage = error.message;
   });
 };
+
+useEffect(()=>{
+  firebase.auth().onAuthStateChanged((user) => {
+    // console.log(user)
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      // var uid = user.uid;
+      setLoggedInUser(user)
+      // alert("Logged in!")
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      // alert("Logged Out")
+    }
+  });
+},[])
     return (
         <div>
        
